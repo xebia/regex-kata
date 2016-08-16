@@ -1,8 +1,8 @@
 {
-  "name": "async-code-with-mocha",
+  "name": "regex-kata",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "match.js",
   "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.11.4",

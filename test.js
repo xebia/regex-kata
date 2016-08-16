@@ -21,8 +21,8 @@ describe('regex code kata', () => {
     });
 
     it('does not match newline operators', () => {
-      expect(match('.', '\n')).to.equal('');
-      expect(match('.', '\r')).to.equal('');
+      expect(match('.', '\n')).to.equal(null);
+      expect(match('.', '\r')).to.equal(null);
     });
 
   });
@@ -35,7 +35,7 @@ describe('regex code kata', () => {
     });
 
     it('does not match', () => {
-      expect(match('^A', 'an A')).to.equal('');
+      expect(match('^A', 'an A')).to.equal(null);
     });
 
   });
@@ -49,22 +49,22 @@ describe('regex code kata', () => {
     });
 
     it('does not match', () => {
-      expect(match('t$', 'eater')).to.equal('t');
+      expect(match('t$', 'eater')).to.equal(null);
     });
 
   });
 
   describe('star operator *', () => {
     it('is greedy', () => {
-      expect(match('a*', 'aaaa')).to.be.true;
+      expect(match('a*', 'aaaa')).to.equal('aaaa');
     });
 
     it('matches zero occurances', () => {
-      expect(match('bo*', 'A bird warbled')).to.be.true;
+      expect(match('bo*', 'A bird warbled')).to.equal('b');
     });
 
     it('does not match', () => {
-      expect(match('bo*', 'A goat grunter')).to.be.false;
+      expect(match('bo*', 'A goat grunter')).to.equal(null);
     });
   });
 
